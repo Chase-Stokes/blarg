@@ -9,11 +9,18 @@ Input: "Jasmine Ann Jones"
 Output: "Jasmine%20Ann%20Jones"
 
 
-
-
-
-
-
+function replaceSpaces(input){
+    let arr = input.split("");
+    let output = [];
+    arr.forEach(function(element){
+        if (element === " ") {
+            output.push("%20");
+        } else {
+            output.push(element)
+        }
+    })
+    return output.join("")
+} 
 
 
 
