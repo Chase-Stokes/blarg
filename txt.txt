@@ -50,6 +50,16 @@ function removeDupes(input) {
     return output
 }
 
+function removeDupes(input) {
+    let output = [];
+    input.forEach(function(element){
+        if(!output.includes(element)){
+            output.push(element)
+        }
+    })
+    return output
+}
+
 
 
 
