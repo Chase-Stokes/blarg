@@ -45,6 +45,7 @@ Output: [7, 9, "hi", 12, 53]
 
 function removeDupes(input) {
     let output = input.filter((a, b) => {
+        console.log(input.indexOf(a) + " " + b)
         return input.indexOf(a) === b
     })
     return output
@@ -105,6 +106,15 @@ Output: false
 Input: "copyright"
 
 Output: true
+
+function unique(input) {
+    for(i=0; i<input.length; i++) {
+        if (i != input.indexOf(input[i])){
+            return false
+        }
+    }
+    return true;
+}
 
 
 
