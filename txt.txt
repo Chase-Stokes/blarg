@@ -94,7 +94,7 @@ function compressedStr(input) {
             }
         }
 
-    if((count > 1)&&(!output.includes(input[i]))){
+    if((count > 1)&&(!output.includes(input[i]))&&(output[i+1]===input[i])){
         output.push(count+input[i])
     } else {
         output.push(input[i])       
