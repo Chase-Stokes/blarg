@@ -22,11 +22,16 @@ function replaceSpaces(input){
     return output.join("")
 } 
 
-
-
-
-
-
+function replace(input) {
+    let a = input.split("")
+    let b = a.indexOf(" ")
+    a[b] = "%20"
+    if (a.includes(" ")){
+        return replace(a.join(""))
+    } else {
+        return a.join("")
+    }
+}
 
 
 
@@ -38,7 +43,12 @@ Input: [7, 9, "hi", 12, "hi" 7, 53]
 
 Output: [7, 9, "hi", 12, 53]
 
-
+function removeDupes(input) {
+    let output = input.filter((a, b) => {
+        return input.indexOf(a) === b
+    })
+    return output
+}
 
 
 
