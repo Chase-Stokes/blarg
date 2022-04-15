@@ -1,1 +1,39 @@
+ Turn a string into a URL => no spaces
+ spaces replaces with %20
+ no replace method/regular expressions
  
+ // take the input and split into an array
+ // looping thru to check " "
+ if it is " " => %20
+ // join back together into a string
+
+ Example : "Mega M an"
+            Mega%20M%20an
+
+   const replace = (input) => {
+       let arr = input.split(" ")    <- [Mega, M, an]
+       let output = [M, e, g, a, %20, M, %20, a, n]
+       arr.forEach(fucntion(element){
+           if (element === " "){
+            output.push("%20")
+           }  else {
+               output.push(element)
+           }
+       })
+    return output.join("%20")Mega%20M%20an
+   }      
+
+   const replace = (input) => {
+       return input.split(" ").join("%20");
+   }  
+                    string  " "    %20
+   const replace = (input) => {
+       let a = input.split("");
+       let b = a.indexOf(" ")
+       a[b] = %20;
+       if (a.includes(" ")){
+           return replace(a.join(""))
+       } else {
+           return a.join("")
+       }
+   }

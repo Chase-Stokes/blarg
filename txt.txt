@@ -9,7 +9,7 @@ Input: "Jasmine Ann Jones"
 Output: "Jasmine%20Ann%20Jones"
 
 
-function replaceSpaces(input){
+const replace = (input) =>{
     let arr = input.split("");
     let output = [];
     arr.forEach(function(element){
@@ -22,7 +22,7 @@ function replaceSpaces(input){
     return output.join("")
 } 
 
-function replace(input) {
+const replace = (input) => {
     let a = input.split("")
     let b = a.indexOf(" ")
     a[b] = "%20"
@@ -33,7 +33,7 @@ function replace(input) {
     }
 }
 
-function replace(input, valToReplace, replacedVal) {
+const replace = (input, valToReplace, replacedVal) => {
     let a = input.split("")
     let b = a.indexOf(valToReplace)
     a[b] = replacedVal
@@ -82,26 +82,19 @@ Input: "aaabccdddda"
 
 Output: "3ab2c4da"
 
-/// Not Working
 
-function compressedStr(input) {
-    let output = [];
-    for(i=0; i<input.length; i++){
-        count=1;
-        for(j=0; j <input.length; j++){
-            if(i !== j && input[i] === input[j]){
-                count++
-            }
-        }
-
-    if((count > 1)&&(!output.includes(input[i]))&&(output[i+1]===input[i])){
-        output.push(count+input[i])
-    } else {
-        output.push(input[i])       
-    }    
-   }  
-   return output.join("")    
-};
+function compressingStrings(str) {
+  let result = ' ';
+  let count = 0;
+  for (let i = 0; i < str.length; i++) {
+    count++ 
+    if (str[i] != str[i+1]) { 
+      result += count + str[i]; 
+      count = 0; 
+    }
+  }
+  return result.replaceAll('1', '');
+}
 
 -----------------------------------------------------------------------------------------
 
