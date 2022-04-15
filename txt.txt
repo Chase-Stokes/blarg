@@ -33,7 +33,18 @@ function replace(input) {
     }
 }
 
+function replace(input, valToReplace, replacedVal) {
+    let a = input.split("")
+    let b = a.indexOf(valToReplace)
+    a[b] = replacedVal
+    if (a.includes(valToReplace)){
+        return replace(a.join(""))
+    } else {
+        return a.join("")
+    }
+}
 
+-----------------------------------------------------------------------------------------
 
 Question #2: Array Deduping
 Write an algorithm that removes duplicates from an array. Do not use a function like filter() to solve this. Once you have solved the problem, demonstrate how it can be solved with filter(). Solve the problem with and without recursion.
@@ -61,16 +72,7 @@ function removeDupes(input) {
     return output
 }
 
-
-
-
-
-
-
-
-
-
-
+-----------------------------------------------------------------------------------------
 
 Question #3: Compressing Strings
 Write an algorithm that takes a string with repeated characters and compresses them, using a number to show how many times the repeated character has been compressed. For instance, aaa would be written as 3a. Solve the problem with and without recursion.
@@ -80,20 +82,28 @@ Input: "aaabccdddda"
 
 Output: "3ab2c4da"
 
+/// Not Working
 
+function compressedStr(input) {
+    let output = [];
+    for(i=0; i<input.length; i++){
+        count=1;
+        for(j=0; j <input.length; j++){
+            if(i !== j && input[i] === input[j]){
+                count++
+            }
+        }
 
+    if((count > 1)&&(!output.includes(input[i]))){
+        output.push(count+input[i])
+    } else {
+        output.push(input[i])       
+    }    
+   }  
+   return output.join("")    
+};
 
-
-
-
-
-
-
-
-
-
-
-
+-----------------------------------------------------------------------------------------
 
 Question #4: Checking for Uniqueness
 Write an algorithm that determines whether all the elements in a string are unique. You may not convert the string into an array or use array methods to solve this problem. The algorithm should return a boolean.
@@ -116,18 +126,7 @@ function unique(input) {
     return true;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
+-----------------------------------------------------------------------------------------
 
 Question #5: Array Sorting
 Write an algorithm that sorts an array without using the sort() method. There are many different sorting algorithms - take the time to read about the following:
